@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Villa Price Prediction</h1>
+    <form action="/predict" method="post">
+        <label>No. of Beds</label><input type="number" name='beds' required><br>
+        <lable>No. of bathrooms</lable><input type="number" name='bathroom' required><br>
+        <label> No. of bedrooms</label><input type="number" name='bedrooms' required><br>
+        <label>Latitude:</label><input type="number" step='any' name="lat" required><br>
+        <label>Longitude:</label><input type="number" step='any' name="long" required><br>
+        <label> Other Ammenities:</label><br>
+        <input type="checkbox" name="has_wireless_internet" value=1>Wireless Internet<br>
+        <input type="checkbox" name="has_air_conditioning" value=1>Air Conditionong<br>
+        <button type="submit">Predict</button>
+    </form>
+     <br>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
